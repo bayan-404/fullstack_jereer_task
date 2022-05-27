@@ -1,8 +1,9 @@
-
+import React from "react";
+import UploadFile from "./components/uploadFile"
 function App() {
   return (
-    <div >
-     hi 
+    <div>
+    <UploadFile />
     </div>
   );
 }
