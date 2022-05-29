@@ -1,1 +1,9 @@
-node_modules
+# Dependency directory
+/node_modules
+bower_components
+
+# Ignore built ts files
+server/dist/**/*
+
+# env file
+.env
