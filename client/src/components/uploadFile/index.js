@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import {Input, Button} from '@mui/material'
 
 
 const UploadFile =() =>{
@@ -34,7 +35,12 @@ const UploadFile =() =>{
        <div>
         <form>
         <h1>share your media</h1>
-        <input type = 'file' accept='image/png, image/jpeg, video/*'onChange={handleFile}/> 
+        <label htmlFor="contained-button-file">
+  <Input accept="image/png, image/jpeg, video/*" id="contained-button-file" multiple type="file" onChange={handleFile} />
+  <Button variant="contained" component="span">
+    Upload
+  </Button>
+</label>
         </form>
         <img src = {file}/>
         </div>
