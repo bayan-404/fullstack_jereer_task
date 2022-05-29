@@ -81,7 +81,7 @@ const Login = () => {
         >
           <Text type="danger">{error.message}</Text>
           <Button type="primary"  htmlType="submit">
-            Submit
+            Login
           </Button>
         </Form.Item>
       </Form>

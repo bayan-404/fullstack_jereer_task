@@ -2,11 +2,16 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../utils/firebase-config";
 import { Button,Typography, Form, Input, Card } from "antd";
+import { useNavigate } from 'react-router-dom'
+
 
 const { Text } = Typography;
 
 const Register = (e) => {
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
 
   const createUser = (values) => { 
     setError('')
@@ -15,6 +20,7 @@ const Register = (e) => {
       .then((res) => {
         const uid = res.user.uid;
         //TODO : STORE USER DATA IN THE DATABASE
+        navigate('/Login')
       })
       .catch((err) =>{
       setError(err.message)} );
@@ -77,7 +83,7 @@ const Register = (e) => {
         >
           <Text type="danger">{error}</Text>
           <Button type="primary"  htmlType="submit">
-            Submit
+            Register
           </Button>
         </Form.Item>
       </Form>
