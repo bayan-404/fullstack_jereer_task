@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\""
+    "server-build": "tsc",
+    "server": "cd server && concurrently \"tsc -w\" \"nodemon dist/js/app.js\"",
+    "client": "cd client && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "build": "cd client && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
