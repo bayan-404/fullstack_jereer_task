@@ -1,9 +1,13 @@
 import React from "react";
-import UploadFile from "./components/uploadFile"
+import 'antd/dist/antd.css'
+import UploadFile from "./components/UploadFile"
+import Register from './components/Register'
+
 function App() {
   return (
     <div>
-    <UploadFile />
+    {/* <UploadFile /> */}
+    <Register/>
     </div>
   );
 }
