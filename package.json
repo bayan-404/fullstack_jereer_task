@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node server/dist/js/app.js",
+    "postinstall": "tsc",
+    "start": "node server/dist/js/app.js",
     "server": "cd server && concurrently \"tsc -w\" \"nodemon dist/js/app.js\"",
     "client": "cd client && npm start",
-    "postinstall": "tsc",
     "heroku-postbuild": "cd server && tsc && cd .. && cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "build": "cd client && npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\""
