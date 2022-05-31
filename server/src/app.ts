@@ -18,7 +18,7 @@ cloudinary.config({
 
 app.use(
     fileUpload({
-        useTempFiles: true,
+        useTempFiles: false,
     })
 );
 app.use(router);
