@@ -7,7 +7,7 @@
 4- npm run dev
 ```
 #### Demo
-coming soon 👀
+https://6297721391060c009435bff5--jereer-fullstack-task.netlify.app/
 
 #### user story
 - the user can log by entering thair Email & passowrd 
