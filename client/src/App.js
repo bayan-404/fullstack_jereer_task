@@ -3,16 +3,18 @@ import { Routes, Route } from "react-router-dom";
 import "antd/dist/antd.css";
 import UploadFile from "./components/UploadFile";
 import Register from "./components/Register";
-import Login from './components/Login';
+import Login from "./components/Login";
+import HomePage from "./components/HomePage"
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<Register/>} />
-        <Route exact path="/register" element={<Register/>} />
-        <Route exact path="/upload" element={<UploadFile/>} />
-        <Route exact path="/login" element={<Login/>} />
+        <Route exact path="/" element={<HomePage/>} />
+        <Route  path="register" element={<Register/>} />
+        <Route  path="upload" element={<UploadFile/>} />
+        <Route  path="login" element={<Login/>} />
+        <Route  Path="*" element={<HomePage/>}/>
       </Routes>
     </div>
   );

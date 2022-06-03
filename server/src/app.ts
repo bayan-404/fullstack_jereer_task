@@ -30,7 +30,6 @@ const options = {
     socketTimeoutMS: 45000,
     family: 4,
 };
-
 mongoose
     .connect(uri, options)
     .then(() =>
