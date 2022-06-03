@@ -18,12 +18,10 @@ const Login = () => {
     .then(res=> navigate('/upload'))
       .catch((error) => {
         setError(error.message)
-        console.log(error)
       });
     }
   
   const onFinish = (values) => {
-    console.log(values)
     logInUser(values);
   };
 

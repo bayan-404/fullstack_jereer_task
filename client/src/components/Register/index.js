@@ -15,7 +15,6 @@ const Register = (e) => {
 
   const createUser = (values) => { 
     setError('')
-    console.log(values.email, values.password)
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
         const uid = res.user.uid;

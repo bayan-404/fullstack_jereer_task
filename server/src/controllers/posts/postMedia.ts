@@ -4,11 +4,9 @@ import Post from "../../models/posts";
 import { IPost } from "../../types/post";
 
 const postMedia = async (req: any, res: Response): Promise<void> => {
-  console.log('cloudinary upload disabled')
   try {
     const file = req?.files?.Image;
     cloudinary.uploader.upload(file?.tempFilePath, async (err: any, result: any)  => {
-      console.log('Im here')
       if (err) {
         return res
           .status(400)

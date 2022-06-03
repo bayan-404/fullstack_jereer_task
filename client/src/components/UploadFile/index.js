@@ -19,7 +19,6 @@ const UploadFile = () => {
       });
 
       const { url } = res.data;
-      console.log(url);
     } catch (err) {
       if (err.response.status === 500) {
         console.log("there was a problem with the server");
