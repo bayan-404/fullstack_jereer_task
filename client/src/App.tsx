@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "antd/dist/antd.css";
 import UploadFile from "./components/UploadFile";
@@ -10,11 +9,11 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<HomePage/>} />
+        <Route  path="/" element={<HomePage/>} />
         <Route  path="register" element={<Register/>} />
         <Route  path="upload" element={<UploadFile/>} />
         <Route  path="login" element={<Login/>} />
-        <Route  Path="*" element={<HomePage/>}/>
+        <Route  path="*" element={<HomePage/>}/>
       </Routes>
     </div>
   );

@@ -1,19 +1,21 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import { useState } from "react";
 import { auth } from "../../utils/firebase-config";
 import { Button,Typography, Form, Input, Card } from "antd";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { Store } from "antd/lib/form/interface";
+import { ValidateErrorEntity } from "rc-field-form/lib/interface";
 
 
 const { Text } = Typography;
 
-const Register = (e) => {
+const Register = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
 
-  const createUser = (values) => { 
+  const createUser = (values : Store) => { 
     setError('')
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
@@ -25,11 +27,11 @@ const Register = (e) => {
       setError(err.message)} );
   };
 
-  const onFinish = (values) => {
+  const onFinish = (values :Store) => {
     createUser(values)
   };
 
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = (errorInfo: ValidateErrorEntity) => {
     console.log("Failed:", errorInfo);
   };
   

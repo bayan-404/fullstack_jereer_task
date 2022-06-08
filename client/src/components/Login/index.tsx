@@ -1,7 +1,9 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { auth } from "../../utils/firebase-config";
+import { Store } from "antd/lib/form/interface";
+import { ValidateErrorEntity } from "rc-field-form/lib/interface";
 
 import { Button,Typography, Form, Input, Card } from "antd";
 
@@ -13,19 +15,21 @@ const Login = () => {
 
   const [error, setError] = useState("");
 
-  const logInUser = (values) => {
+  const logInUser = (values: Store ) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
     .then(()=> navigate('/upload'))
       .catch((error) => {
         setError(error.message)
       });
     }
+
+
   
-  const onFinish = (values) => {
+  const onFinish = (values :Store) => {
     logInUser(values);
   };
 
-  const onFinishFailed = (errorInfo) => {
+  const onFinishFailed = (errorInfo :ValidateErrorEntity) => {
     console.log("Failed:", console.log(errorInfo));
   };
 
@@ -77,7 +81,7 @@ const Login = () => {
             span: 16,
           }}
         >
-          <Text type="danger">{error.message}</Text>
+          <Text type="danger">{error}</Text>
           <Button type="primary"  htmlType="submit">
             Login
           </Button>
