@@ -15,7 +15,7 @@ const Login = () => {
 
   const logInUser = (values) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
-    .then(res=> navigate('/upload'))
+    .then(()=> navigate('/upload'))
       .catch((error) => {
         setError(error.message)
       });
