@@ -17,7 +17,7 @@ const postMedia = async (req: any, res: Response): Promise<void> => {
       const response: IPost = await Post.create(mediaPost);
       console.log(result.url);
 
-      return res.status(200).json({ url: result.url });
+      return res.status(201).json({ url: result.url });
     });
   } catch (error) {
     res.status(500).json({

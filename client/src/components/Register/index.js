@@ -19,7 +19,7 @@ const Register = (e) => {
       .then((res) => {
         const uid = res.user.uid;
         //TODO : STORE USER DATA IN THE DATABASE
-        navigate('/Login')
+        navigate('/login')
       })
       .catch((err) =>{
       setError(err.message)} );
