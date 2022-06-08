@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "rootDir": "./src",
+      "outDir": "./build",
+      "removeComments": true,
+      "noEmit": true,
+      "pretty": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true
+    },
+
+  "exclude": [
+      "node_modules"
+  ]
+  }
