@@ -50,7 +50,9 @@ const UploadFile = () => {
           </button>
         </label>
       </form>
+      {file && (
       <img src={file} />
+      )}
     </div>
   );
 };
